@@ -4,10 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>小班底 · 数字员工 | 为小微企业与一人公司打造</title>
-<meta name="description" content="小班底为小微企业和一人公司提供数字员工：智能体、技能、工作流与 RAG 知识库，聚焦自媒体、电商与本地生活服务。">
+<meta name="description" content="小班底为小微企业和一人公司提供 30 位开源数字员工：智能体、技能、工作流与 RAG 知识库，聚焦自媒体、电商、独立开发者与本地生活。每岗一个开源仓库，四层验证后上岗。">
 <meta name="theme-color" content="#0a0e1a">
 <meta property="og:title" content="小班底 · 数字员工">
-<meta property="og:description" content="为小微企业与一人公司打造的数字员工 —— 智能体、技能、工作流、RAG 知识库。">
+<meta property="og:description" content="30 位开源数字员工，每岗一个仓库，四层验证后上岗。">
+<meta property="og:url" content="https://xiaobandi.github.io/">
+<link rel="canonical" href="https://xiaobandi.github.io/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"小班底 · 数字员工","url":"https://xiaobandi.github.io/","sameAs":["https://github.com/xiaobandi"],"description":"为小微企业与一人公司打造的 30 位开源数字员工"}
+</script>
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230a0e1a'/><circle cx='50' cy='38' r='13' fill='%234f7cff'/><path d='M22 78c0-15 13-24 28-24s28 9 28 24z' fill='%2322d3ee'/></svg>">
 <style>
@@ -174,7 +179,7 @@
   .aud li svg{width:15px;height:15px;flex-shrink:0;margin-top:5px;stroke:var(--cyan);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 
   /* ---------- 行业场景 ---------- */
-  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+  .grid-3{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:48px}
   .scene{
     background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
     padding:28px 24px;transition:transform .22s,border-color .22s,background .22s;
@@ -223,6 +228,24 @@
   .foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted-2)}
   .foot a:hover{color:var(--text)}
 
+  /* ---------- 员工名册 ---------- */
+  .roster-group{margin-top:34px}
+  .roster-h{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
+  .roster-h h3{font-size:19px;font-weight:650}
+  .roster-h span{font-size:12.5px;color:var(--muted-2)}
+  .roster-sub{font-size:13.5px;color:var(--muted);margin-bottom:18px}
+  .grid-emp{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .emp{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:18px 18px 14px;display:flex;flex-direction:column;gap:8px;
+    transition:transform .2s,border-color .2s,background .2s;
+  }
+  .emp:hover{transform:translateY(-3px);border-color:rgba(79,124,255,.45);background:var(--surface-hi)}
+  .emp b{font-size:15px;font-weight:600}
+  .emp p{font-size:12.8px;color:var(--muted);line-height:1.65;flex:1}
+  .emp a{font-size:12px;color:var(--cyan)}
+  .emp a:hover{text-decoration:underline}
+
   /* ---------- 响应式 ---------- */
   @media (max-width:900px){
     .grid-4{grid-template-columns:repeat(2,1fr)}
@@ -230,12 +253,14 @@
     .steps{grid-template-columns:1fr 1fr;gap:34px 0}
     .step:not(:last-child)::before{display:none}
     .audience{grid-template-columns:1fr}
+    .grid-emp{grid-template-columns:1fr 1fr}
     .navlinks{display:none}
   }
   @media (max-width:600px){
     .hero{padding:64px 0 56px}
     section{padding:64px 0}
     .grid-4{grid-template-columns:1fr}
+    .grid-emp{grid-template-columns:1fr}
     .steps{grid-template-columns:1fr}
     .stats{grid-template-columns:1fr 1fr;margin-top:44px}
   }
@@ -258,8 +283,9 @@
     </div>
     <nav class="navlinks">
       <a href="#capability">能力矩阵</a>
-      <a href="#audience">服务对象</a>
+      <a href="#roster">员工名册</a>
       <a href="#scene">行业场景</a>
+      <a href="#quality">质量验证</a>
       <a href="#path">落地路径</a>
     </nav>
     <a href="#contact" class="btn btn-ghost" style="padding:9px 18px;font-size:14px">联系我们</a>
@@ -270,7 +296,7 @@
 
   <!-- HERO -->
   <div class="wrap hero">
-    <span class="pill"><span class="dot"></span>为小微企业与一人公司打造的数字员工</span>
+    <span class="pill"><span class="dot"></span>30 位数字员工 · 源码全部开放</span>
     <h1>让小班底，<span class="grad">拥有自己的数字员工</span></h1>
     <p class="lede">
       我们把智能体、技能、工作流与 RAG 知识库编排成一支可落地的数字员工队伍，
@@ -281,14 +307,14 @@
         聊聊你的场景
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="#capability" class="btn btn-ghost">看看能做什么</a>
+      <a href="#roster" class="btn btn-ghost">浏览 30 位员工</a>
     </div>
 
     <div class="stats">
-      <div><b>4</b><span>能力支柱</span></div>
-      <div><b>3</b><span>聚焦行业</span></div>
-      <div><b>0</b><span>需要扩编</span></div>
-      <div><b>7×24</b><span>持续在线</span></div>
+      <div><b>30</b><span>位数字员工</span></div>
+      <div><b>245</b><span>个技能·工作流单元</span></div>
+      <div><b>7685</b><span>项静态回归检查</span></div>
+      <div><b>4 层</b><span>上岗前验证</span></div>
     </div>
   </div>
 
@@ -339,6 +365,132 @@
     </div>
   </section>
 
+  <!-- 质量验证 -->
+  <section id="quality">
+    <div class="wrap">
+      <p class="eyebrow">Quality Gate</p>
+      <h2>先考岗，再上岗</h2>
+      <p class="sub">数字员工最容易翻车的地方是"看起来会，做起来编"。我们用四层验证把关，全部通过才发布进开源仓库 —— 验证台账也随仓库公开。</p>
+
+      <div class="grid-4">
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"/></svg></div>
+          <h3>静态回归 · 7685 项</h3>
+          <p>32 个仓库 7685 项自动检查：输出契约一致性、依赖完整性、发布物料齐备性，任何一项不过即阻断构建。</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div>
+          <h3>三维体检 · 245 单元</h3>
+          <p>每个技能与工作流单元逐一过规范合规、证据真实性、投产就绪三维体检，杜绝"文档漂漂亮亮、实际跑不起来"。</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2L4.5 13.5H11l-1 8L18.5 10H12z"/></svg></div>
+          <h3>端到端实测 · 零编造</h3>
+          <p>用固定素材真实跑通工作流全部步骤，产出中每个数字逐个回指素材原文，算术推导需申报并经机器求值复核。</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <h3>行为级验证 · 150 场景</h3>
+          <p>缺输入要停闸、对外发布走人工确认、红线指令要拒绝、数字要守纪律、后台不可用要降级 —— 150 个场景真跑 + 机器复核。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 员工名册 -->
+  <section id="roster">
+    <div class="wrap">
+      <p class="eyebrow">Roster</p>
+      <h2>30 位数字员工，按岗位雇佣</h2>
+      <p class="sub">每位员工都是一个独立的开源仓库：岗位说明书（system prompt）、技能、工作流、知识库与验证台账全部公开，先看货再雇佣。</p>
+
+      <div class="roster-group">
+        <div class="roster-h"><h3>📱 自媒体从业者</h3><span>7 位</span></div>
+        <p class="roster-sub">选题、脚本、分发、评论区、商单、数据复盘与私域转化——一个博主需要的整条内容流水线</p>
+        <div class="grid-emp">
+        <div class="emp"><b>评论区运营官</b><p>把评论区从"成本中心"变成"选题矿藏"的运营副手</p>
+          <a href="https://github.com/xiaobandi/de-creator-comment-operator" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>商单对接管家</b><p>帮中腰部博主建立报价体系、不再贱卖流量的商务助理</p>
+          <a href="https://github.com/xiaobandi/de-creator-brand-deal-manager" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>多平台分发改写师</b><p>一稿多投不是搬运，而是逐平台重写+合规适配的分发参谋</p>
+          <a href="https://github.com/xiaobandi/de-creator-multichannel-rewriter" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>私域引流转化师</b><p>把公域粉丝合规沉淀为私域资产并培育成交的增收引擎</p>
+          <a href="https://github.com/xiaobandi/de-creator-private-traffic-converter" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>爆款选题策划师</b><p>每天早会前 5 分钟交付"今日选题包"的选题合伙人</p>
+          <a href="https://github.com/xiaobandi/de-creator-topic-planner" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>跨平台数据复盘师</b><p>把割裂的各平台后台归一成一张看得懂、能指导下周选题的复盘报告</p>
+          <a href="https://github.com/xiaobandi/de-creator-data-reviewer" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>短视频脚本创作师</b><p>从选题到过检成稿的脚本流水线，写得快且不被限流</p>
+          <a href="https://github.com/xiaobandi/de-creator-script-writer" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        </div>
+      </div>
+      <div class="roster-group">
+        <div class="roster-h"><h3>🛒 电商商家</h3><span>8 位</span></div>
+        <p class="roster-sub">客服售后、Listing 文案、铺货同步、选品情报、复购运营、评价管理、短视频与商品视觉</p>
+        <div class="grid-emp">
+        <div class="emp"><b>电商 AI 商品视觉</b><p>视觉设计师·小图 ｜ 一人店的"到岗美工"，只出能直接上架的合规商品图</p>
+          <a href="https://github.com/xiaobandi/de-ecommerce-visual-designer" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>评价管理与差评拦截</b><p>评价运营专员·小评 ｜ 把评价从售后成本变成可监控、可归因、可修复的运营资产</p>
+          <a href="https://github.com/xiaobandi/de-ecommerce-review-guardian" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>智能客服+售后</b><p>客服专员·小服 ｜ 一人店的 7×24 客服坐席</p>
+          <a href="https://github.com/xiaobandi/de-ecommerce-customer-service-assistant" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>选品与竞品情报</b><p>选品分析师·小察 ｜ 给结论不给仪表盘，把生意参谋/蝉妈妈翻译成决策</p>
+          <a href="https://github.com/xiaobandi/de-ecommerce-product-scout" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>短视频/直播内容</b><p>内容编导·小导 ｜ 不替你拍视频，只解决"今天拍什么、开头 3 秒说什么、发完怎么复盘"</p>
+          <a href="https://github.com/xiaobandi/de-ecommerce-shortvideo-producer" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>Listing/详情页文案</b><p>上架文案专员·小文 ｜ ①视觉员工的配套另一半——图和文案是同一次上架的两半</p>
+          <a href="https://github.com/xiaobandi/de-ecommerce-listing-copywriter" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>多平台铺货与库存同步</b><p>多平台运营助理·小铺 ｜ 一人店的"轻量 ERP"，只做真正用的 20% 功能</p>
+          <a href="https://github.com/xiaobandi/de-ecommerce-multichannel-operator" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>私域复购运营</b><p>私域运营专员·小复 ｜ 一人店用得起的私域，不碰有赞/微盟的重资产玩法</p>
+          <a href="https://github.com/xiaobandi/de-ecommerce-repurchase-operator" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        </div>
+      </div>
+      <div class="roster-group">
+        <div class="roster-h"><h3>🚀 独立开发者</h3><span>7 位</span></div>
+        <p class="roster-sub">冷启动获客、反馈聚合、财税合规、发布冲刺、轻客服、多平台发布与 SEO 内容矩阵</p>
+        <div class="grid-emp">
+        <div class="emp"><b>轻量客服与 FAQ 数字员工</b><p>出海产品的"夜间值班员"：7×24 双语应答，高价值问题秒转人工</p>
+          <a href="https://github.com/xiaobandi/de-indie-light-cs-faq" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>SEO 内容矩阵助理</b><p>出海独立站"调研→写作→发布→监控"的 SEO 全链路闭环助理</p>
+          <a href="https://github.com/xiaobandi/de-indie-seo-content-assistant" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>出海冷启动获客官</b><p>产品冷启动期的"增长合伙人"：替你想清楚今天在哪个社区、对谁、说什么话</p>
+          <a href="https://github.com/xiaobandi/de-indie-coldstart-growth-officer" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>发布日冲刺指挥官</b><p>把"一次性高压发布"变成清单化流程的发布周总指挥</p>
+          <a href="https://github.com/xiaobandi/de-indie-launch-day-commander" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>多平台发布与数据回捞助理</b><p>一次录入、十平台分发、数据自动回捞的"分发中控台"</p>
+          <a href="https://github.com/xiaobandi/de-indie-multichannel-publisher" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>用户反馈聚合分析师</b><p>把散落五个渠道的用户反馈变成每周一张决策表</p>
+          <a href="https://github.com/xiaobandi/de-indie-feedback-analyst" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>财税合规助理</b><p>一人公司的"合规哨兵"：节点不遗漏、文档不踩坑</p>
+          <a href="https://github.com/xiaobandi/de-indie-finance-tax-assistant" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        </div>
+      </div>
+      <div class="roster-group">
+        <div class="roster-h"><h3>🏪 本地生活服务商家</h3><span>8 位</span></div>
+        <p class="roster-sub">预约排班、团购引流、会员唤醒、多平台中台、私域复购、差评灭火、经营日报与探店编导</p>
+        <div class="grid-emp">
+        <div class="emp"><b>差评灭火官</b><p>每天 5 分钟守住评分命根子的口碑值班员</p>
+          <a href="https://github.com/xiaobandi/de-local-review-firefighter" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>预约排班调度员</b><p>漏单错单归零、低谷填平的排班大脑</p>
+          <a href="https://github.com/xiaobandi/de-local-booking-scheduler" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>私域复购管家</b><p>让 80% 沉睡私域重新到店的"AI 店长助理"</p>
+          <a href="https://github.com/xiaobandi/de-local-private-repeat-buyer-manager" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>门店经营日报分析师</b><p>每天打烊后一句话告诉老板"今天生意怎么样、明天注意什么"</p>
+          <a href="https://github.com/xiaobandi/de-local-store-daily-report-analyst" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>团购引流设计师</b><p>把"被平台牵着走的低价团购"变成"算得清毛利的引流武器"</p>
+          <a href="https://github.com/xiaobandi/de-local-groupbuy-designer" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>探店短视频编导</b><p>门店的"编外内容总监"：每天给出拍什么、怎么拍、怎么挂团购的完整答案</p>
+          <a href="https://github.com/xiaobandi/de-local-store-video-director" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>会员唤醒师</b><p>把储值卡里沉睡的现金流一笔笔唤醒</p>
+          <a href="https://github.com/xiaobandi/de-local-member-awakener" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        <div class="emp"><b>多平台运营中台</b><p>一次编辑，三平台同步的跨平台传送带</p>
+          <a href="https://github.com/xiaobandi/de-local-multichannel-ops-hub" target="_blank" rel="noopener">查看岗位仓库 ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 服务对象 -->
   <section id="audience">
     <div class="wrap">
@@ -376,7 +528,7 @@
   <section id="scene">
     <div class="wrap">
       <p class="eyebrow">Scenarios</p>
-      <h2>先在三个行业里扎下去</h2>
+      <h2>先在四个行业里扎下去</h2>
       <p class="sub">不做大而全的通用平台。我们只选了几个离钱近、重复动作多、知识沉淀价值高的场景。</p>
 
       <div class="grid-3">
@@ -405,7 +557,19 @@
         </div>
 
         <div class="scene">
-          <div class="num"><span>SCENE 03</span><em>本地生活</em></div>
+          <div class="num"><span>SCENE 03</span><em>独立开发者</em></div>
+          <h3>产品与出海运营</h3>
+          <p>独立开发者最缺的是"把自己当公司来运营"的那双手。</p>
+          <ul class="tasks">
+            <li>冷启动获客与增长实验执行</li>
+            <li>用户反馈聚合与洞察输出</li>
+            <li>财税合规节点提醒与资料准备</li>
+            <li>发布日冲刺与多平台内容矩阵</li>
+          </ul>
+        </div>
+
+        <div class="scene">
+          <div class="num"><span>SCENE 04</span><em>本地生活</em></div>
           <h3>门店与口碑运营</h3>
           <p>到店生意拼的是曝光、转化和复购，而这些都靠持续的内容和响应。</p>
           <ul class="tasks">
@@ -462,7 +626,7 @@
             发邮件聊聊
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="https://github.com/xiaobandi" class="btn btn-ghost">GitHub 主页</a>
+          <a href="https://github.com/xiaobandi" class="btn btn-ghost" target="_blank" rel="noopener">GitHub · 30 个开源仓库</a>
         </div>
       </div>
     </div>
